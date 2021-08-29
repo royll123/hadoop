@@ -9,7 +9,7 @@ docker build -t hadoop:0.1 .
 
 2. start the container and run bash
 ```
-docker run --name hadoop -p 9870:9870 -p 8088:8088 -it hadoop:0.1 /bin/bash
+docker run --name hadoop -p 127.0.0.1:9870:9870 -p 127.0.0.1:8088:8088 -p 127.0.0.1:19888:19888 -it hadoop:0.1 /bin/bash
 ```
 
 3. start HDFS and YARN
@@ -31,6 +31,7 @@ cat output/*
 5. browse web interface for NameNode and ResourceManager
 - NameNode: http://localhost:9870/
 - ResourceManager: http://localhost:8088/
+- HistoryServer: http://localhost:19888/
 
 # Reference
 https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html
