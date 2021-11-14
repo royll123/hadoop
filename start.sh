@@ -1,6 +1,8 @@
 
 /etc/init.d/ssh start
 
+service rsyslog start
+
 bin/hdfs namenode -format
 sbin/start-dfs.sh
 bin/hdfs dfs -mkdir /user
